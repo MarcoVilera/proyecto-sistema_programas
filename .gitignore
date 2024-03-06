@@ -29,3 +29,6 @@ __pycache__/
 *.njsproj
 *.sln
 *.sw?
+
+#Environment Variables
+.env

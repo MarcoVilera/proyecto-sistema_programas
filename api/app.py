@@ -1,14 +1,18 @@
 from flask import Flask
 from dotenv import load_dotenv
-from flask_sqlalchemy import SQLAlchemy
 from utils.db import db
 from datetime import datetime
 import os
 
 #Endpoints Imports
-from routes.valid_user import valid_user_bp
-from routes.new_user import new_user_bp
-from routes.new_shop import new_shop_bp
+#TODO Verificar imports
+from routes.users import users_bp
+from routes.shops import shops_bp
+from routes.municipality import municipality_bp
+from routes.category import category_bp
+from routes.product import product_bp
+from routes.manufacturer import manufacturer_bp
+from routes.consolidate import consolidate_bp
 
 load_dotenv() #loads environment variables from .env file
 
@@ -26,18 +30,24 @@ app = create_app()
 def ping():
     return {'time':datetime.now(), 'message':'pong'}
 
-# Endpoint to check if a user is in the database.
-app.register_blueprint(valid_user_bp, url_prefix='/valid_user')
+app.register_blueprint(users_bp, url_prefix='/users')
 
-# Endpoint to add a new user to the database.
-app.register_blueprint(new_user_bp, url_prefix='/new_user')
+app.register_blueprint(shops_bp, url_prefix='/shops')
 
-# Endpoint to add a new shop to the database.
-app.register_blueprint(new_shop_bp, url_prefix='/new_shop')
+app.register_blueprint(municipality_bp, url_prefix='/municipalities')
+
+app.register_blueprint(category_bp, url_prefix='/categories')
+
+app.register_blueprint(manufacturer_bp, url_prefix='/manufacturers')
+
+app.register_blueprint(product_bp, url_prefix='/products')
+
+app.register_blueprint(consolidate_bp, url_prefix='/consolidated')
 
 # Create the database tables in case they don't exist.
 with app.app_context():
     db.create_all()
+    #db.drop_all() # Use this line to drop all tables in the database
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

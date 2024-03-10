@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 from dotenv import load_dotenv
 from utils.db import db
 from datetime import datetime
@@ -25,6 +26,7 @@ def create_app(): # Function to create the app and set the database connection s
 
 
 app = create_app()
+CORS(app)
 # The ping route is used to test the connection to the server.
 @app.route('/')
 def ping():

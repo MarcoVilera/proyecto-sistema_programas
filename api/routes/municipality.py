@@ -27,7 +27,7 @@ def get_municipality(name):
     return jsonify(municipality.serialize()), 200
 
 # This endpoint is used to add a new municipality to the database.
-@municipality_bp.route('/municipalities', methods=['POST'])
+@municipality_bp.route('/', methods=['POST'])
 def add_municipality():
     '''
     JSON structure

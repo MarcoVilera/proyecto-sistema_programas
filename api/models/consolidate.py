@@ -6,3 +6,4 @@ class Consolidate(db.Model):
     id_product = db.Column(db.Integer, db.ForeignKey('product.id'),nullable=False)
     price = db.Column(db.Float, nullable=False)
     hasStock = db.Column(db.Boolean, nullable=False)
+    url = db.Column(db.String(255), nullable=False)

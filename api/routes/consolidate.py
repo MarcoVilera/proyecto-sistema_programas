@@ -26,13 +26,15 @@ def new_consolidate():
         "shop_rif": "J-123456789",
         "product_name": "testproduct",
         "price": 100,
-        "hasStock": true
+        "hasStock": true,
+        "url": "testurl.com"
     }
     '''
     request_shop_rif = request.json['shop_rif']
     request_product_name = request.json['product_name']
     request_price = float(request.json['price'])
     request_hasStock = request.json['hasStock']
+    request_url = request.json['url']
 
     #Validation of data
     product = db.session.query(Product).filter_by(name=request_product_name).first()
@@ -48,7 +50,8 @@ def new_consolidate():
         shop_rif=shop.rif,
         id_product=product.id,
         price=request_price,
-        hasStock=request_hasStock
+        hasStock=request_hasStock,
+        url=request_url
     )
 
     db.session.add(new_consolidate)

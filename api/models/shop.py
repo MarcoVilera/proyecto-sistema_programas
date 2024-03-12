@@ -10,4 +10,5 @@ class Shop(db.Model):
     website = db.Column(db.String(120), unique=True, nullable=False)
     socialMedia = db.Column(db.String(120), unique=True, nullable=False)
     rating = db.Column(db.Float, nullable=False)
+    verified = db.Column(db.Boolean, nullable=False)
     consolidates= db.relationship('Consolidate', backref='shop')

@@ -42,7 +42,8 @@ def new_shop():
         "hasDelivery": true,
         "website": "testwebsite",
         "socialMedia": "testsocialMedia",
-        "rating": 5
+        "rating": 5,
+        "verified": true
     }
     '''
     print('shop trying to register: ' + request.json['name'])
@@ -56,6 +57,7 @@ def new_shop():
     request_website = request.json['website'].lower()
     request_socialMedia = request.json['socialMedia'].lower()
     request_rating = float(request.json['rating'])
+    request_verified = request.json['verified']
     
     #Validation of data
     user_rif = db.session.query(User).filter_by(rif=request_rif).first()
@@ -76,7 +78,8 @@ def new_shop():
         hasDelivery = request_hasDelivery,
         website = request_website,
         socialMedia = request_socialMedia,
-        rating = request_rating
+        rating = request_rating,
+        verified = request_verified
     )
 
     db.session.add(new_shop)
@@ -109,7 +112,8 @@ def modify_shop(rif):
     request_website = request.json['website'].lower()
     request_socialMedia = request.json['socialMedia'].lower()
     request_rating = float(request.json['rating'])
-
+    request_verified = request.json['verified']
+    
     shop = db.session.query(Shop).filter_by(rif=request_rif).first()
     if not shop: return jsonify({'message': 'Shop not found'}), 404
 
@@ -125,7 +129,7 @@ def modify_shop(rif):
     shop.website = request_website
     shop.socialMedia = request_socialMedia
     shop.rating = request_rating
-
+    shop.verified = request_verified
     db.session.commit()
 
     return jsonify({'message': 'Shop modified successfully'}), 200

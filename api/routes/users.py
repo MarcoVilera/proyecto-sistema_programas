@@ -5,7 +5,7 @@ from models.user import User
 users_bp = Blueprint('users', __name__)
 
 # This endpoint is used to check if a user is in the database.
-@users_bp.route('/', methods=['GET'])
+@users_bp.route('/', methods=['POST'])
 def valid_user():
     '''
     JSON structure
@@ -26,7 +26,7 @@ def valid_user():
 
 
 # This endpoint is used to add a new user to the database.
-@users_bp.route('/', methods=['POST'])
+@users_bp.route('/new', methods=['POST'])
 def new_user():
     '''
     JSON structure

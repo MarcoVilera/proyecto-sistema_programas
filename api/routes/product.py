@@ -18,10 +18,10 @@ def get_products():
     return jsonify(response_array), 200
 
 # This endpoint is used to get a product from the database.
-@product_bp.route('/<string:name>', methods=['GET'])
-def get_product(name):
-    request_name = name.lower()
-    product = db.session.query(Product).filter_by(name=request_name).first()
+@product_bp.route('/<string:id>', methods=['GET'])
+def get_product(id):
+    request_id = id
+    product = db.session.query(Product).filter_by(id=request_id).first()
     if not product: return jsonify({'message': 'Product not found'}), 404
     return jsonify(to_dict(product)), 200
 

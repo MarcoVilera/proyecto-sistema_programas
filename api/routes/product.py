@@ -69,11 +69,12 @@ def new_product():
     return jsonify({'message': 'Product added successfully'}), 201
 
 # This endpoint is used to update a product from the database.
-@product_bp.route('/<string:name>', methods=['PUT'])
-def update_product(name):
+@product_bp.route('/<string:id>', methods=['PUT'])
+def update_product(id):
     '''
     JSON structure
     {
+        "id": 1,
         "name": "testproduct",
         "promedy": 100,
         "rating": 5,
@@ -81,13 +82,14 @@ def update_product(name):
         "manufacturer_name": "testmanufacturer"
     }
     '''
-    request_name = name.lower()
+    request_id = id
+    request_name = request.json['name'].lower()
     request_promedy = float(request.json['promedy'])
     request_ratig = float(request.json['rating'])
     request_category = request.json['category_name'].lower()
     request_manufacturer = request.json['manufacturer_name'].lower()
     
-    product = db.session.query(Product).filter_by(name=request_name).first()
+    product = db.session.query(Product).filter_by(id=request_id).first()
     if not product: return jsonify({'message': 'Product not found'}), 404
 
 
@@ -108,10 +110,10 @@ def update_product(name):
     return jsonify({'message': 'Product updated successfully'}), 200
 
 # This endpoint is used to delete a product from the database.
-@product_bp.route('/<string:name>', methods=['DELETE'])
-def delete_product(name):
-    request_name = name.lower()
-    product = db.session.query(Product).filter_by(name=request_name).first()
+@product_bp.route('/<string:id>', methods=['DELETE'])
+def delete_product(id):
+    request_id = id
+    product = db.session.query(Product).filter_by(id=id).first()
     if not product: return jsonify({'message': 'Product not found'}), 404
 
     db.session.delete(product)

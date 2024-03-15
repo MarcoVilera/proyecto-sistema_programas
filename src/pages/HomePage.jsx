@@ -24,7 +24,7 @@ const HomePage = () => {
             </h1>
 
             {products.map(product => (
-                <Link to={`/Product/${product.name}`} > {product.name} </Link> // CAMBIAR "prodcut.name" POR "product.id" EN LA BASE DE DATOS
+                <Link key={product.id} to={`/Product/${product.id}`}> {product.name} </Link> 
             ))}
         </>
     )

@@ -4,6 +4,8 @@ from utils.dict import to_dict
 from models.consolidate import Consolidate
 from models.product import Product
 from models.shop import Shop
+from models.category import Category
+from models.manufacturer import Manufacturer
 
 consolidate_bp = Blueprint('consolidate', __name__)
 
@@ -16,7 +18,34 @@ def get_consolidates():
     for consolidate in consolidates:
         response_array.append(to_dict(consolidate))
     return response_array, 200
+@consolidate_bp.route('/get', methods=['GET'])
+def get_consolidates_items():
+    consolidates = db.session.query(Consolidate).all()
+    shops = db.session.query(Shop).all()
+    products = db.session.query(Product).all()
+    categories = db.session.query(Category).all()
+    manufacturers = db.session.query(Manufacturer).all()
 
+    response_array = []
+
+    for consolidate in consolidates:
+        product = next((product for product in products if product.id == consolidate.id_product), None)
+        category = next((category for category in categories if product and category.id == product.category_id), None)
+
+        response_array.append({
+            'id': consolidate.id,
+            'shop_rif': consolidate.shop_rif.capitalize(),
+            'id_product': consolidate.id_product,
+            'price': consolidate.price,
+            'hasStock': consolidate.hasStock,
+            'url': consolidate.url,
+            'rating': product.rating if product else 0,
+            'product_name': product.name if product else 'No product',
+            'category_name': category.name.capitalize() if category else 'No category'
+        })
+
+    return jsonify(response_array), 200
+    
 # This endpoint is used to get all the consolidates from a specific shop.
 @consolidate_bp.route('/', methods=['POST'])
 def new_consolidate():

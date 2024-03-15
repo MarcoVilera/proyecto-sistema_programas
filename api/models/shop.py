@@ -5,7 +5,7 @@ class Shop(db.Model):
     name = db.Column(db.String(80), unique=True, nullable=False)
     phone = db.Column(db.String(15), unique=True, nullable=False)
     municipality_id = db.Column(db.Integer, db.ForeignKey('municipality.id'))
-    address = db.Column(db.String(120), unique=True, nullable=False)
+    address = db.Column(db.String(120), unique=False, nullable=False)
     hasDelivery = db.Column(db.Boolean, nullable=False)
     website = db.Column(db.String(120), unique=True, nullable=False)
     socialMedia = db.Column(db.String(120), unique=True, nullable=False)

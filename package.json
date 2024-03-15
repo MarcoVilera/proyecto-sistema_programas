@@ -17,6 +17,7 @@
     "install": "pip install virtualenv && python -m virtualenv venv && call venv\\Scripts\\activate.bat && pip install -r requirements.txt"
   },
   "dependencies": {
+    "axios": "^1.6.7",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
     "react": "^18.2.0",

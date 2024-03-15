@@ -1,0 +1,115 @@
+h1{
+    display: inline;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px 16px 0 16px;
+    background-color: #7B74E0;
+
+}
+.header-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.title{
+    display: flex;
+    align-items: center;
+    
+}
+.header-title button {
+    cursor: pointer;
+
+}
+.header-title .login-btn{
+    background-color: #F8FAFC;
+    color: #7B74E0;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    margin-right: 16px;
+    transition: all 0.25s;
+    border: 2px solid #F8FAFC;
+
+}
+.header-title .login-btn:hover{
+    background-color: #E2E8F0;
+    border-color: #E2E8F0;
+}
+
+.header-title .login-btn:active{
+    transform: scale(0.95);
+}
+
+.header-title .register-btn{
+    border : 2px solid #F8FAFC;
+    background-color: transparent;
+    padding: 8px 8px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #F8FAFC;
+    transition: all 0.25s;
+}
+.header-title .register-btn:hover{
+    color: #E2E8F0;
+    border-color: #E2E8F0;
+}
+.header-title .register-btn:active{
+    transform: scale(0.95);
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+nav {
+    width: 100%;
+}
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    margin-top: 0;
+    
+}
+
+nav ul li {
+    display: inline;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: #F8FAFC;
+    font-size: larger;
+    font-weight: 500;
+}
+
+nav a::before {
+    content: " ";
+    display: block;
+    height: 5px;
+    background-color: #F8FAFC;
+    position: relative;
+    top: 30px;
+    width: 0%;
+    transition: width 0.3s;
+}
+
+nav a:hover::before {
+    width: 100%;
+    font-weight: 700;
+}
+
+nav a.active::before {
+    width: 100%;
+}

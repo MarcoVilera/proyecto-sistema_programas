@@ -2,13 +2,13 @@ import { ItemContainer } from '../components/ItemContainer'
 import { NavBar } from '../components/NavBar'
 import { SearchBar } from '../components/SearchBar'
 import { Sidebar } from '../components/SideBar'
-import '../styles/Index.css'
+import '../styles/index.css'
 import { Outlet, useLocation } from 'react-router-dom'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Footer } from '../components/Footer'
 
-export const Index = () => {
+const Index = () => {
     const [items, setItems] = useState([])
     const [filter, setFilter] = useState({
         input: '',
@@ -85,3 +85,4 @@ export const Index = () => {
         </>
     )
 }
+export default Index

@@ -78,6 +78,7 @@ export const ItemContainer = ({ items, }) => {
                     rating={item.rating}
                     category={item.category_name}
                     url={item.url}
+                    id={item.id}
                 />
             ))}
         </div>

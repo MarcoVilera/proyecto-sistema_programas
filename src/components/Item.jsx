@@ -2,7 +2,7 @@ import { Rating } from 'react-simple-star-rating'
 import {Link } from 'react-router-dom'
 import '../styles/Item.css'
 import capitalize from '../utils/capitalize.js'
-export const Item = ({ name, price, rating, category, url, id }) => {
+export const Item = ({ name, price, rating, category, url, id, shopName, product_id}) => {
     /*
     {
         input: '',
@@ -13,10 +13,11 @@ export const Item = ({ name, price, rating, category, url, id }) => {
     */
     return (
         <>
-            <Link className="item-link" to={`/Product/${id}`}>
+            <Link className="item-link" to={`/Product/${product_id}`}>
                 <div className="item">
                     <img src={url} alt={name} />
                     <h3>{capitalize(name)}</h3>
+                    <span className='item-shop_name'>{capitalize(shopName)}</span>
                     <p>{price}$</p>
                     <hr />
                     <Rating initialValue={rating} allowFraction readonly />

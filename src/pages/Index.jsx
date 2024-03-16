@@ -42,6 +42,7 @@ const Index = () => {
     })
     const maxPrice = Math.max(...items.map((item) => item.price))
     console.log('maxPrice', maxPrice)
+    console.log('items filtrados', filteredItems)
     return (
         <>
             <NavBar />

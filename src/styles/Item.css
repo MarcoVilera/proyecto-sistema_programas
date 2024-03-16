@@ -9,7 +9,13 @@
     justify-content: center;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+.item-shop_name{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: 450;
+    color: #7B74E0;
 
+}
 .item h3 {
     margin-top: 10px;
     margin-bottom: 0px;

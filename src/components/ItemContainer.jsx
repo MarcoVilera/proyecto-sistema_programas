@@ -57,7 +57,7 @@ import '../styles/ItemContainer.css'
 //     },
 // ]
 
-export const ItemContainer = ({ items, }) => {
+export const ItemContainer = ({ items }) => {
     console.log('items', items)
     /*
     {
@@ -79,6 +79,8 @@ export const ItemContainer = ({ items, }) => {
                     category={item.category_name}
                     url={item.url}
                     id={item.id}
+                    shopName={item.shopName}
+                    product_id = {item.id_product}
                 />
             ))}
         </div>

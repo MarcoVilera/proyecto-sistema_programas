@@ -38,6 +38,7 @@ def get_consolidates_items():
             'id_product': consolidate.id_product,
             'price': consolidate.price,
             'hasStock': consolidate.hasStock,
+            'shopName':consolidate.shop.name,
             'url': consolidate.url,
             'rating': product.rating if product else 0,
             'product_name': product.name if product else 'No product',

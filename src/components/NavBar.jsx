@@ -31,7 +31,7 @@ import { About } from '../pages/About'
 // ]
 export const NavBar = () => {
     const location = useLocation()
-    console.log(location.pathname.replace('/', ''))
+    // console.log(location.pathname.replace('/', ''))
     // const [testcategorys, setTestcategorys] = useState([])
     // useEffect(() => {
     //     fetch('http://127.0.0.1:5000/categoriess')

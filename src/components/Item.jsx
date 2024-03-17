@@ -12,20 +12,18 @@ export const Item = ({ name, price, rating, category, url, id, shopName, product
     }
     */
     return (
-        <>
-            <Link className="item-link" to={`/Product/${product_id}`}>
-                <div className="item">
-                    <img src={url} alt={name} />
-                    <h3>{capitalize(name)}</h3>
-                    <span className='item-shop_name'>{capitalize(shopName)}</span>
-                    <p>{price}$</p>
-                    <hr />
-                    <Rating initialValue={rating} allowFraction readonly />
-                    <div className="category-div">
-                        <span className="item-category">{category}</span>
-                    </div>
+        <Link className="item-link" to={`/Product/${product_id}`}>
+            <div className="item">
+                <img src={url} alt={name} />
+                <h3>{capitalize(name)}</h3>
+                <span className='item-shop_name'>{capitalize(shopName)}</span>
+                <p>{price}$</p>
+                <hr />
+                <Rating initialValue={rating} allowFraction readonly />
+                <div className="category-div">
+                    <span className="item-category">{category}</span>
                 </div>
-            </Link>
-        </>
+            </div>
+        </Link>    
     )
 }

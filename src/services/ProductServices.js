@@ -1,6 +1,5 @@
 
 import axios from "axios"
-import { useState } from "react"
 
 const url = `http://localhost:5000`
 
@@ -18,9 +17,9 @@ const getShop = (con) =>
     axios.get(`${url}/shops`)
     .then(response => response.data.find(shop => shop.rif == con.shop_rif))
 
-const getMunName = () => 
+const getMuns = () => 
     axios.get(`${url}/municipalities`)
     .then(response => response.data)
 
 
-export default { getData, getCons, getShop, getMunName }
+export default { getData, getCons, getShop, getMuns }

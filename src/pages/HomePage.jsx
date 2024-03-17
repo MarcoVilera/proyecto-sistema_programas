@@ -10,9 +10,7 @@ const HomePage = () => {
 
     useEffect(() => {
         axios.get(url)
-        .then(response => {
-            setProducts(response.data);
-        })
+        .then(response => setProducts(response.data))
     }, [])
 
     console.log(products)

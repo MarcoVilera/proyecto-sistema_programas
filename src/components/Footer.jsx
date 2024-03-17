@@ -66,13 +66,13 @@ export const Footer = () => {
                 <div className="legal-creds">
                     <ul>
                         <li>
-                            <a href="">Política de Privacidad</a>
+                            <a href="/">Política de Privacidad</a>
                         </li>
                         <li>
-                            <a href="">Política de Cookies</a>
+                            <a href="/">Política de Cookies</a>
                         </li>
                         <li>
-                            <a href="">Aviso Legal</a>
+                            <a href="/">Aviso Legal</a>
                         </li>
                     </ul>
                 </div>

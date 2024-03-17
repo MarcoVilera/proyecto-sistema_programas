@@ -1,7 +1,9 @@
+
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 import { Rating } from 'react-simple-star-rating'
 import '../styles/SideBar.css'
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+
 export const Sidebar = ({ max = 100, onFilter }) => {
     const [price, setPrice] = useState(0)
     const [rating, setRating] = useState(0)

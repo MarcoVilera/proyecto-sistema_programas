@@ -1,6 +1,8 @@
+
 import { IoSearchSharp } from 'react-icons/io5'
 import '../styles/SearchBar.css'
 import { IconContext } from 'react-icons'
+
 export const SearchBar = ({ onSearch }) => {
     return (
         <div className="input-container">

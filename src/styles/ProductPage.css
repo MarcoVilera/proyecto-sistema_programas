@@ -1,0 +1,46 @@
+
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    margin-left: 100px;
+    margin-right: 50px;
+}
+
+.wrapper > div {
+    margin: 6px;
+}
+
+.description {
+    padding: 10px;
+    border: 2px white solid;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.filtros {
+    display: flex;
+    vertical-align: middle;
+}
+
+.ads {
+    width: 180px;
+    height: 600px;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 19px 37px;
+
+    border: 3px white solid ;
+    border-radius: 10px;
+}
+
+.toggle-button {
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}

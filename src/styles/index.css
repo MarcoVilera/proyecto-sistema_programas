@@ -1,3 +1,6 @@
+
+/* HEAD */
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -33,3 +36,15 @@ h1 {
   line-height: 1.1;
 }
 
+.index-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+.item-container {
+  width: 80%;
+}

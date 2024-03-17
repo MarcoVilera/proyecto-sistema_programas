@@ -1,0 +1,448 @@
+{
+    "municipalities": [
+        {
+            "name": "San Diego"
+        },
+        {
+            "name": "Valencia"
+        },
+        {
+            "name": "Naguanagua"
+        }
+    ],
+    "categories": [
+        {
+            "name": "Laptop"
+        },
+        {
+            "name": "Sobremesa"
+        },
+        {
+            "name": "Teléfono"
+        },
+        {
+            "name": "Componentes"
+        },
+        {
+            "name": "Periféricos"
+        },
+        {
+            "name": "Accesorios"
+        }
+    ],
+    "manufacturers": [
+        {
+            "name": "Apple"
+        },
+        {
+            "name": "Samsung"
+        },
+        {
+            "name": "Dell"
+        },
+        {
+            "name": "HP"
+        },
+        {
+            "name": "Acer"
+        },
+        {
+            "name": "Asus"
+        },
+        {
+            "name": "Lenovo"
+        },
+        {
+            "name": "AMD"
+        },
+        {
+            "name": "Intel"
+        },
+        {
+            "name": "Nvidia"
+        },
+        {
+            "name": "MSI"
+        }
+    ],
+    "products": [
+        {
+            "name": "Macbook Pro",
+            "price": 2000,
+            "category": "Laptop",
+            "manufacturer": "Apple",
+            "rating": 5
+        },
+        {
+            "name": "Macbook Air",
+            "price": 1500,
+            "category": "Laptop",
+            "manufacturer": "Apple",
+            "rating": 4
+        },
+        {
+            "name": "Galaxy S10",
+            "price": 1000,
+            "category": "Teléfono",
+            "manufacturer": "Samsung",
+            "rating": 3
+        },
+        {
+            "name": "Galaxy S9",
+            "price": 800,
+            "category": "Teléfono",
+            "manufacturer": "Samsung",
+            "rating": 2
+        },
+        {
+            "name": "Inspiron 15",
+            "price": 800,
+            "category": "Sobremesa",
+            "manufacturer": "Dell",
+            "rating": 3.4
+        },
+        {
+            "name": "Pavilion",
+            "price": 700,
+            "category": "Sobremesa",
+            "manufacturer": "HP",
+            "rating": 3.2
+        },
+        {
+            "name": "Aspire 5",
+            "price": 600,
+            "category": "Sobremesa",
+            "manufacturer": "Acer",
+            "rating": 3.1
+        },
+        {
+            "name": "Vivobook",
+            "price": 500,
+            "category": "Sobremesa",
+            "manufacturer": "Asus",
+            "rating": 3.3
+        },
+        {
+            "name": "IdeaPad",
+            "price": 400,
+            "category": "Sobremesa",
+            "manufacturer": "Lenovo",
+            "rating": 4.5
+        },
+        {
+            "name": "Ryzen 5",
+            "price": 300,
+            "category": "Componentes",
+            "manufacturer": "AMD",
+            "rating": 4.5
+        },
+        {
+            "name": "Core i5",
+            "price": 200,
+            "category": "Componentes",
+            "manufacturer": "Intel",
+            "rating": 4.5
+        },
+        {
+            "name": "GTX 1660",
+            "price": 300,
+            "category": "Componentes",
+            "manufacturer": "Nvidia",
+            "rating": 4.5
+        },
+        {
+            "name": "RTX 2060",
+            "price": 400,
+            "category": "Componentes",
+            "manufacturer": "Nvidia",
+            "rating": 5
+        },
+        {
+            "name": "B450",
+            "price": 100,
+            "category": "Componentes",
+            "manufacturer": "MSI",
+            "rating": 5
+        },
+        {
+            "name": "Mouse",
+            "price": 50,
+            "category": "Periféricos",
+            "manufacturer": "MSI",
+            "rating": 4.5
+        },
+        {
+            "name": "Teclado",
+            "price": 50,
+            "category": "Periféricos",
+            "manufacturer": "MSI",
+            "rating": 2
+        },
+        {
+            "name": "Monitor",
+            "price": 200,
+            "category": "Periféricos",
+            "manufacturer": "MSI",
+            "rating": 3.5
+        },
+        {
+            "name": "Cargador",
+            "price": 50,
+            "category": "Accesorios",
+            "manufacturer": "MSI",
+            "rating": 5
+        },
+        {
+            "name": "Funda",
+            "price": 50,
+            "category": "Accesorios",
+            "manufacturer": "MSI",
+            "rating": 4.5
+        },
+        {
+            "name": "Kurama Red Dragon",
+            "price": 50,
+            "category": "Accesorios",
+            "manufacturer": "MSI",
+            "rating": 1
+        }
+    ],
+    "users": [
+        {
+            "username": "adminDAKA",
+            "password": "adminDAKA",
+            "email": "dakatienda@gmail.com",
+            "rif": "J-123456789"
+        },
+        {
+            "username": "PcMasterRace",
+            "password": "admin",
+            "email": "pcmaster@sede.com",
+            "rif": "J-223456789"
+        },
+        {
+            "username": "VenezuelaGamer",
+            "password": "admin",
+            "email": "finanzasVEG@gmail.com",
+            "rif": "J-323456789"
+        },
+        {
+            "username": "AxelAdmin",
+            "password": "admin",
+            "email": "admonAxel@hotmail.com",
+            "rif": "J-423456789"
+        },
+        {
+            "username": "adminPuntoCom",
+            "password": "admin",
+            "email": "puntoadmon@gmail.com",
+            "rif": "J-523456789"
+        }
+    ],
+    "shops": [
+        {
+            "name": "DAKA",
+            "municipality": "Valencia",
+            "rif": "J-123456789",
+            "phone": "0241-1234567",
+            "address": "Calle 99 Paez, Valencia, Carabobo",
+            "hasDelivery": true,
+            "website": "https://dakatienda.com/",
+            "socialMedia": "@DakaTienda",
+            "rating": 4.5,
+            "verified": true
+
+
+        },
+        {
+            "name": "PcMasterRace",
+            "municipality": "Valencia",
+            "rif": "J-223456789",
+            "phone": "0412-9876543",
+            "address": "C.C Fin de Siglo, San Diego, Carabobo",
+            "hasDelivery": true,
+            "website": "https://pcmasterrace.com/",
+            "socialMedia": "@PcMasterRace",
+            "rating": 3,
+            "verified": false
+        },
+        {
+            "name": "VenezuelaGamer",
+            "municipality": "Naguanagua",
+            "rif": "J-323456789",
+            "phone": "0424-5678901",
+            "address": "Calle 456, Naguanagua, Carabobo",
+            "hasDelivery": true,
+            "website": "https://venezuelagamer.com/",
+            "socialMedia": "@VenezuelaGamer",
+            "rating": 5,
+            "verified": true
+        },
+        {
+            "name": "Axel",
+            "municipality": "San Diego",
+            "rif": "J-423456789",
+            "phone": "0241-2345678",
+            "address": "Calle 789, San Diego, Carabobo",
+            "hasDelivery": false,
+            "website": "https://axel.com/",
+            "socialMedia": "@Axel",
+            "rating": 4.2,
+            "verified": false
+        },
+        {
+            "name": "PuntoCom",
+            "municipality": "Valencia",
+            "rif": "J-523456789",
+            "phone": "0241-3456789",
+            "address": "Calle 012, Valencia, Carabobo",
+            "hasDelivery": false,
+            "website": "https://puntocom.com/",
+            "socialMedia": "@PuntoCom",
+            "rating": 4.2,
+            "verified": false
+        }
+    ],
+    "consolidates": [
+        {
+            "shop": "DAKA",
+            "product": "Macbook Pro",
+            "price": 2000,
+            "stock": true,
+            "thumbnail": "https://allstore.com.ve/wp-content/uploads/2022/06/768-MacBook_Pro_13_in_Space_Gray_Position-1.png"
+        },
+        {
+            "shop": "PcMasterRace",
+            "product": "Macbook Pro",
+            "price": 2100,
+            "stock": true,
+            "thumbnail": "https://allstore.com.ve/wp-content/uploads/2022/06/768-MacBook_Pro_13_in_Space_Gray_Position-1.png"
+        },
+        {
+            "shop": "VenezuelaGamer",
+            "product": "Aspire 5",
+            "price": 600,
+            "stock": true,
+            "thumbnail": "https://m.media-amazon.com/images/I/7189iXimfWL.jpg"
+        },
+        {
+            "shop": "Axel",
+            "product": "Inspiron 15",
+            "price": 800,
+            "stock": true,
+            "thumbnail": "https://i.ebayimg.com/thumbs/images/g/CRoAAOSw0~BlmyAB/s-l640.jpg"
+        },
+        {
+            "shop": "PuntoCom",
+            "product": "Galaxy S10",
+            "price": 1000,
+            "stock": true,
+            "thumbnail": "https://i.blogs.es/addc23/samsung-galaxy-s10/650_1200.webp"
+        },
+        {
+            "shop": "PcMasterRace",
+            "product": "Galaxy S9",
+            "price": 800,
+            "stock": true,
+            "thumbnail": "https://araure.solutekla.com/photo/1/samsung/celulares/celular_samsung_galaxy_s9_plus_purple/celular_samsung_galaxy_s9_plus_purple_0001"
+        },
+        {
+            "shop": "VenezuelaGamer",
+            "product": "Pavilion",
+            "price": 700,
+            "stock": true,
+            "thumbnail": "https://m.media-amazon.com/images/I/810gynDZHzL.jpg"
+        },
+        {
+            "shop": "Axel",
+            "product": "Vivobook",
+            "price": 500,
+            "stock": true,
+            "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_853295-MLV72908548018_112023-F.webp"
+        },
+        {
+            "shop": "PuntoCom",
+            "product": "IdeaPad",
+            "price": 400,
+            "stock": true,
+            "thumbnail": "https://www.laserprintsoluciones.com/wp-content/uploads/2023/05/15.6″-8GB-256GB.png"
+        },
+        {
+            "shop": "DAKA",
+            "product": "Ryzen 5",
+            "price": 300,
+            "stock": true,
+            "thumbnail": "https://m.media-amazon.com/images/I/51f2hkWjTlL.jpg"
+        },
+        {
+            "shop": "PcMasterRace",
+            "product": "Core i5",
+            "price": 200,
+            "stock": true,
+            "thumbnail": "https://sigmatiendas.com/cdn/shop/files/Procesador-Intel-Core-i5-11400-11va-Generacion-6-Nucleos-12Hilos-2.6Ghz-A-4.4-Ghz-LGA-1200-BX8070811400-portada_grande.jpg?v=1695880318"
+        },
+        {
+            "shop": "VenezuelaGamer",
+            "product": "GTX 1660",
+            "price": 300,
+            "stock": true,
+            "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_930195-MLV54222462993_032023-F.webp"
+        },
+        {
+            "shop": "Axel",
+            "product": "RTX 2060",
+            "price": 400,
+            "stock": true,
+            "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_623440-MLV48790311130_012022-F.webp"
+        },
+        {
+            "shop": "PuntoCom",
+            "product": "B450",
+            "price": 100,
+            "stock": true,
+            "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_968075-MLA73331775607_122023-F.webp"
+        },
+        {
+            "shop": "DAKA",
+            "product": "Mouse",
+            "price": 50,
+            "stock": true,
+            "thumbnail": "https://m.media-amazon.com/images/I/61QY3V6A-NL.jpg"
+        },
+        {
+            "shop": "PcMasterRace",
+            "product": "Teclado",
+            "price": 50,
+            "stock": true,
+            "thumbnail": "https://m.media-amazon.com/images/I/71-+n3UMsML._AC_UF894,1000_QL80_.jpg"
+        },
+        {
+            "shop": "VenezuelaGamer",
+            "product": "Monitor",
+            "price": 200,
+            "stock": true,
+            "thumbnail": "https://pccentro.net/img/s/4/9/2/4/8/49248-large_default.jpg"
+        },
+        {
+            "shop": "Axel",
+            "product": "Cargador",
+            "price": 50,
+            "stock": true,
+            "thumbnail": "https://falabella.scene7.com/is/image/FalabellaPE/gsc_120855406_2829122_1?wid=800&hei=800&qlt=70"
+        },
+        {
+            "shop": "PuntoCom",
+            "product": "Funda",
+            "price": 50,
+            "stock": true,
+            "thumbnail": "https://ishop.gt/cdn/shop/products/MWVU2-2_800x.jpeg?v=1611288133"
+        },
+        {
+            "shop": "DAKA",
+            "product": "Kurama Red Dragon",
+            "price": 50,
+            "stock": true,
+            "thumbnail": "https://media.solotodo.com/media/products/754633_picture_1528247905.png"
+        }
+    ]
+}

@@ -19,7 +19,7 @@ def get_municipalities():
     return jsonify(response_array), 200
 
 # This endpoint is used to get a municipality from the database.
-@municipality_bp.route('/municipalities/<string:name>', methods=['GET'])
+@municipality_bp.route('/<string:name>', methods=['GET'])
 def get_municipality(name):
     request_name = name.lower()
     municipality = db.session.query(Municipality).filter_by(name=request_name).first()

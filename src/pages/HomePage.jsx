@@ -18,15 +18,14 @@ const HomePage = () => {
     console.log(products)
 
     return (
-        <>
-            <h1>
-                Home Page
-            </h1>
+        <div className="container">
+            
+            <h1> Home Page </h1>
 
             {products.map(product => (
                 <Link key={product.id} to={`/Product/${product.id}`}> {product.name} </Link> 
             ))}
-        </>
+        </div>
     )
 }
 

@@ -1,9 +1,13 @@
 from flask import Blueprint, request, jsonify
 from utils.db import db
 from utils.dict import to_dict
+
 from models.product import Product
 from models.category import Category
 from models.manufacturer import Manufacturer
+from models.consolidate import Consolidate
+from models.shop import Shop
+from models.municipality import Municipality
 
 product_bp = Blueprint('products', __name__)
 
@@ -11,11 +15,37 @@ product_bp = Blueprint('products', __name__)
 @product_bp.route('/', methods=['GET'])
 def get_products():
     products = db.session.query(Product).all()
-    if not products: return jsonify({'message': 'No products found'}), 404
-    response_array = []
+
+    response = []
     for product in products:
-        response_array.append(to_dict(product))
-    return jsonify(response_array), 200
+        manufacturer = db.session.query(Manufacturer).filter_by(id=product.manufacturer_id).first()
+        category = db.session.query(Category).filter_by(id=product.category_id).first()
+        consolidated = db.session.query(Consolidate).filter_by(id_product=product.id).all()
+    
+        shops = []
+        for item in consolidated:
+            shop = db.session.query(Shop).filter_by(rif=item.shop_rif).first()
+            municipality = db.session.query(Municipality).filter_by(id=shop.municipality_id).first()
+            shops.append({
+                'shop_name': shop.name,
+                'municipality_name': municipality.name,
+                'rating': shop.rating,
+                'price': item.price,
+                'verified': shop.verified,
+                'stock': item.hasStock
+            })
+            url = item.url
+        product_info = {
+            'id': product.id,
+            'name': product.name,
+            'manufacturer': manufacturer.name,
+            'category': category.name,
+            'shops': shops,
+            'url': url
+        }
+        response.append(product_info)
+
+    return jsonify(response), 200
 
 # This endpoint is used to get a product from the database.
 @product_bp.route('/<string:id>', methods=['GET'])
@@ -23,7 +53,41 @@ def get_product(id):
     request_id = id
     product = db.session.query(Product).filter_by(id=request_id).first()
     if not product: return jsonify({'message': 'Product not found'}), 404
-    return jsonify(to_dict(product)), 200
+
+    manufacturer = db.session.query(Manufacturer).filter_by(id=product.manufacturer_id).first()
+    category = db.session.query(Category).filter_by(id=product.category_id).first()
+    consolidated = db.session.query(Consolidate).filter_by(id_product=product.id).all()
+
+    consolidate = db.session.query(Consolidate).filter_by(id_product=product.id).first()
+    if consolidate: url = consolidate.url 
+    else: url = ''
+    
+    shops = []
+    for item in consolidated:
+        shop = db.session.query(Shop).filter_by(rif=item.shop_rif).first()
+        municipality = db.session.query(Municipality).filter_by(id=shop.municipality_id).first()
+        shops.append({
+            'name': shop.name,
+            'municipality': municipality.name,
+            'rating': shop.rating,
+            'price': item.price,
+            'verified': shop.verified,
+            'stock': item.hasStock
+            
+        })
+    response = {
+        'id': product.id,
+        'name': product.name,
+        'manufacturer': manufacturer.name,
+        'category': category.name,
+        'url': url,
+        'shops': shops
+
+    }
+    
+    return jsonify(response), 200
+        
+
 
 # This endpoint is used to add a new product to the database.
 @product_bp.route('/', methods=['POST'])

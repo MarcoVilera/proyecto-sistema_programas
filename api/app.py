@@ -26,7 +26,7 @@ def create_app(): # Function to create the app and set the database connection s
 
 
 app = create_app()
-CORS(app)
+CORS(app,origins=["http://localhost:5173"])
 # The ping route is used to test the connection to the server.
 @app.route('/')
 def ping():

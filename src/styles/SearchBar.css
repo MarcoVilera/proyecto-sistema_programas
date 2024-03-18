@@ -8,7 +8,7 @@ input:focus {
     outline: none;
 }
 
-.input-container {
+.search-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +16,7 @@ input:focus {
 
 }
 
-.input-outline {
+.search-outline {
     border: 1px solid #7B74e0;
     padding: 10px;
     border-radius: 10px;

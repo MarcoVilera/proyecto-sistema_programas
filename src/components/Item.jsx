@@ -2,7 +2,7 @@ import { Rating } from 'react-simple-star-rating'
 import {Link } from 'react-router-dom'
 import '../styles/Item.css'
 import capitalize from '../utils/capitalize.js'
-export const Item = ({ name, price, rating, category, url, id, shopName, product_id}) => {
+export const Item = ({ name, price, rating, category, url, shopName, product_id}) => {
     /*
     {
         input: '',

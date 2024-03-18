@@ -3,6 +3,7 @@ import { Route, Routes, NavLink, Link } from 'react-router-dom'
 import { FaCartPlus } from 'react-icons/fa'
 // import { useEffect, useState } from 'react'
 import { About } from '../pages/About'
+
 // const testcategorys = [
 //     {
 //         id: 1,
@@ -29,16 +30,9 @@ import { About } from '../pages/About'
 //         name: 'Trending',
 //     },
 // ]
+
 export const NavBar = () => {
-    // const [testcategorys, setTestcategorys] = useState([])
-    // useEffect(() => {
-    //     fetch('http://127.0.0.1:5000/categoriess')
-    //         .then((response) => response.json())
-    //         .then((data) => {
-    //             console.log(data)
-    //             setTestcategorys(data)
-    //         })
-    // }, [])
+
     const loged = localStorage.getItem('username')
     console.log(loged)
     return (

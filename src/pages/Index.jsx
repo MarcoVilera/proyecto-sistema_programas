@@ -3,10 +3,10 @@ import { NavBar } from '../components/NavBar'
 import { SearchBar } from '../components/SearchBar'
 import { Sidebar } from '../components/SideBar'
 import '../styles/index.css'
-import { Outlet, useLocation } from 'react-router-dom'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Footer } from '../components/Footer'
+import Loading from '../components/Loading'
 
 const Index = () => {
     const [items, setItems] = useState([])
@@ -29,8 +29,6 @@ const Index = () => {
     }, [])
 
     console.log('filtros', filter)
-    const location = useLocation()
-
     const filteredItems = items.filter((item) => {
         return (
             (filter.input === '' || item.product_name.includes(filter.input)) &&
@@ -46,7 +44,10 @@ const Index = () => {
     return (
         <>
             <NavBar />
-            {location.pathname === '/' ? (
+
+            {items.length === 0 ? (
+                <Loading />
+            ) : (
                 <>
                     <SearchBar
                         onSearch={(newFilter) =>
@@ -79,11 +80,11 @@ const Index = () => {
                             /> */}
                     </div>
                 </>
-            ) : (
-                <Outlet />
             )}
-            <Footer/>
+
+            <Footer />
         </>
     )
 }
+
 export default Index

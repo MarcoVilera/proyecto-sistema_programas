@@ -21,10 +21,10 @@ def get_municipalities():
 # This endpoint is used to get a municipality from the database.
 @municipality_bp.route('/<string:name>', methods=['GET'])
 def get_municipality(name):
-    request_name = name.lower()
+    request_name = name
     municipality = db.session.query(Municipality).filter_by(name=request_name).first()
     if not municipality: return jsonify({'message': 'Municipality not found'}), 401
-    return jsonify(municipality.serialize()), 200
+    return to_dict(municipality), 200
 
 # This endpoint is used to add a new municipality to the database.
 @municipality_bp.route('/', methods=['POST'])

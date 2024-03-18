@@ -1,5 +1,5 @@
 import '../styles/NavBar.css'
-import { Route, Routes, NavLink, useLocation } from 'react-router-dom'
+import { Route, Routes, NavLink, Link } from 'react-router-dom'
 import { FaCartPlus } from 'react-icons/fa'
 // import { useEffect, useState } from 'react'
 import { About } from '../pages/About'
@@ -30,8 +30,6 @@ import { About } from '../pages/About'
 //     },
 // ]
 export const NavBar = () => {
-    const location = useLocation()
-    // console.log(location.pathname.replace('/', ''))
     // const [testcategorys, setTestcategorys] = useState([])
     // useEffect(() => {
     //     fetch('http://127.0.0.1:5000/categoriess')
@@ -41,7 +39,8 @@ export const NavBar = () => {
     //             setTestcategorys(data)
     //         })
     // }, [])
-
+    const loged = localStorage.getItem('username')
+    console.log(loged)
     return (
         <>
             <header>
@@ -50,10 +49,30 @@ export const NavBar = () => {
                         <FaCartPlus size={'5em'} />
                         <h1>Insert Name</h1>
                     </div>
-                    <div className="header-buttons">
-                        <button className="login-btn">Login</button>
-                        <button className="register-btn">Register</button>
-                    </div>
+                    {loged ? (
+                        <div className="header-user">
+                            <p>Bienvenido de vuelta, {loged}!</p>
+                            <button
+                                className="register-btn"
+                                onClick={() => {
+                                    localStorage.removeItem('username')
+                                    window.location.reload()
+                                }}>
+                                Log out
+                            </button>
+                        </div>
+                    ) : (
+                        <div className="header-buttons">
+                            <Link to="/Login">
+                                <button className="login-btn">Log in</button>
+                            </Link>
+                            <Link to="/Register">
+                                <button className="register-btn">
+                                    Register
+                                </button>
+                            </Link>
+                        </div>
+                    )}
                 </div>
                 <nav>
                     <ul>
@@ -70,7 +89,6 @@ export const NavBar = () => {
                         <li>
                             <NavLink to="/about">Sobre nosotros</NavLink>
                         </li>
-
                     </ul>
                 </nav>
             </header>

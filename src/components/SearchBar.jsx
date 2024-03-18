@@ -5,8 +5,8 @@ import { IconContext } from 'react-icons'
 
 export const SearchBar = ({ onSearch }) => {
     return (
-        <div className="input-container">
-            <div className="input-outline">
+        <div className="search-container">
+            <div className="search-outline">
                 <input
                     type="text"
                     placeholder="Search"

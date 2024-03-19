@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { Rating } from 'react-simple-star-rating'
 import '../styles/SideBar.css'
 
-export const Sidebar = ({ max = 100, onFilter }) => {
+export const Sidebar = ({ max = 100, setMaxPrice, onFilter }) => {
     const [price, setPrice] = useState(0)
     const [rating, setRating] = useState(0)
     const [categories, setCategories] = useState([])
@@ -45,6 +45,7 @@ export const Sidebar = ({ max = 100, onFilter }) => {
                 </form>
             </div>
             <h3>Rango de precio</h3>
+            <p> Precio maximo: {setMaxPrice} $</p>
             <div className="slider-div">
                 <span>0</span>
                 <input

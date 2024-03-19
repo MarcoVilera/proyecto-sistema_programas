@@ -28,7 +28,7 @@ const Index = () => {
             })
     }, [])
 
-    console.log('filtros', filter)
+    // console.log('filtros', filter)
     const filteredItems = items.filter((item) => {
         return (
             (filter.input === '' || item.product_name.includes(filter.input)) &&
@@ -39,8 +39,9 @@ const Index = () => {
         )
     })
     const maxPrice = Math.max(...items.map((item) => item.price))
-    console.log('maxPrice', maxPrice)
-    console.log('items filtrados', filteredItems)
+    console.log(filter.price)
+    // console.log('maxPrice', maxPrice)
+    // console.log('items filtrados', filteredItems)
     return (
         <>
             <NavBar />
@@ -63,6 +64,7 @@ const Index = () => {
                     <div className="index-container">
                         <Sidebar
                             max={maxPrice}
+                            setMaxPrice={filter.price}
                             onFilter={(newFilter) =>
                                 setFilter((currentFilter) => ({
                                     ...currentFilter,

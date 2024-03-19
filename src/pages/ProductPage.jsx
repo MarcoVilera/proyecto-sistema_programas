@@ -14,8 +14,6 @@ import ProductServices from '../services/ProductServices'
 import '../styles/ProductPage.css'
 import Loading from "../components/Loading";
 
-const testlink = 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fsistemasrjd.com%2Fve%2Fprocesadores%2F2701-procesador-amd-ryzen-7-5700g.html&psig=AOvVaw2ReYBEo5X7YOTV3gYCeTEO&ust=1710769402261000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCIDf5-O2-4QDFQAAAAAdAAAAABAE'
-
 const ProductPage = () => {
 
     const id = useParams().productID;
@@ -42,7 +40,7 @@ const ProductPage = () => {
                     <div className="description">
                         <h3>{data.name}</h3>
                         <p>{data.manufacturer}</p>
-                        <Rating size={20} initialValue={data.rating} allowFraction readonly />
+                        <Rating size={20} initialValue={3} allowFraction readonly />
                     </div>
                     <img className="ads"
                     src="https://via.assets.so/img.jpg?w=180&h=600&tc=#323232&bg=#cecece&t=AD"
@@ -51,7 +49,7 @@ const ProductPage = () => {
                 </div>
                 <div className="product-container">
 
-                    <img src={testlink} alt={data.name} />
+                    <img src={data.url} alt={data.name} />
                     <h2> {data.name} </h2>
 
                     <div className="filtros">

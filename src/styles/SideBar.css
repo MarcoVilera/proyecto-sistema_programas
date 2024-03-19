@@ -1,6 +1,6 @@
 .sidebar-container {
     min-width: 190px;
-    max-width: 190px;
+    max-width: 210px;
     padding: 8px 8px 8px 16px;
     height: 100%;
     text-align: center;
@@ -12,7 +12,6 @@
     font-size: 1.5rem;
     font-weight: 600;
     color: #7B74E0;
-
 }
 
 .slider-div {

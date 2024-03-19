@@ -18,6 +18,9 @@
     "install": "pip install virtualenv && python -m virtualenv venv && call venv\\Scripts\\activate.bat && pip install -r requirements.txt"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.14",
     "axios": "^1.6.7",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",

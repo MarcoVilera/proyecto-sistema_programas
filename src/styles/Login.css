@@ -36,6 +36,7 @@
     width: 400px;
     border: 2px solid #909090;
     border-radius: 6px;
+    font-size: 1.2em;
 }
 
 .login-box button {

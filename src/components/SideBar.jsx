@@ -2,6 +2,7 @@ import { Rating } from 'react-simple-star-rating'
 import '../styles/SideBar.css'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Tooltip } from '@mui/material'
 export const Sidebar = ({ max = 100, onFilter }) => {
     const [price, setPrice] = useState(0)
     const [rating, setRating] = useState(0)
@@ -45,19 +46,33 @@ export const Sidebar = ({ max = 100, onFilter }) => {
             <h3>Rango de precio</h3>
             <div className="slider-div">
                 <span>0</span>
-                <input
-                    type="range"
-                    id="price"
-                    name="price"
-                    min="0"
-                    max={max}
-                    value={price}
-                    onChange={(e) => {
-                        setPrice(e.target.value)
-                        onFilter({ price: parseInt(e.target.value) })
-                    }}
-                />
-
+                <Tooltip
+                title={price}
+                    slotProps={{
+                        popper: {
+                            modifiers: [
+                                {
+                                    name: 'offset',
+                                    options: {
+                                        offset: [0, -18],
+                                    },
+                                },
+                            ],
+                        },
+                    }} placement='top'>
+                    <input
+                        type="range"
+                        id="price"
+                        name="price"
+                        min="0"
+                        max={max}
+                        value={price}
+                        onChange={(e) => {
+                            setPrice(e.target.value)
+                            onFilter({ price: parseInt(e.target.value) })
+                        }}
+                    />
+                </Tooltip>
                 <span>{max}</span>
             </div>
             <h3>Rating</h3>

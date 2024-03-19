@@ -11,6 +11,7 @@ import ErrorPage from './pages/ErrorPage'
 import About from './pages/About'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Dashboard from './pages/Dashboard'
 const router = createBrowserRouter([
     {
         path: '/',
@@ -38,7 +39,11 @@ const router = createBrowserRouter([
     {
         path: '/Register',
         element: <Register />,
-    }
+    },
+    {
+        path: '/Dashboard/:shopRif',
+        element: <Dashboard />,
+    },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

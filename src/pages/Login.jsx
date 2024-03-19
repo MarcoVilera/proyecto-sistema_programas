@@ -25,7 +25,11 @@ export const Login = () => {
             if (response.status === 200) {
                 alert('login exitoso')
                 localStorage.setItem('username', e.target.username.value)
-                navigate('/')
+                const rif = response.data.rif
+                if (response.data) {
+                    localStorage.setItem('rif', rif)
+                }
+                navigate(`/Dashboard/${rif}`)
             }
             if (response.status != 200) {
                 alert('login fallido')
@@ -60,7 +64,7 @@ export const Login = () => {
                         <p>
                             ¿No tienes cuenta?
                             <br />
-                            <Link to="/">Registrate</Link> y Unete a la
+                            <Link to="/Register">Registrate</Link> y Unete a la
                             Comunidad
                         </p>
                     </div>

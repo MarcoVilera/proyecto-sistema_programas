@@ -24,19 +24,19 @@ export const Footer = () => {
                     <h5>Más información</h5>
                     <ul>
                         <li>
-                            <a href="index.html">Inicio</a>
+                            <a href="#">Inicio</a>
                         </li>
                         <li>
-                            <a href="PAGINA NOSOTROS/NOSOTROS.html">Nosotros</a>
+                            <a href="#">Nosotros</a>
                         </li>
                         <li>
-                            <a href="/">Carta</a>
+                            <a href="#">Carta</a>
                         </li>
                         <li>
-                            <a href>Blog</a>
+                            <a href='#'>Blog</a>
                         </li>
                         <li>
-                            <a href="PAGINA CONTACTO/CONTACTO.html">Contacto</a>
+                            <a href="#">Contacto</a>
                         </li>
                     </ul>
                 </div>
@@ -66,13 +66,13 @@ export const Footer = () => {
                 <div className="legal-creds">
                     <ul>
                         <li>
-                            <a href="">Política de Privacidad</a>
+                            <a href="#">Política de Privacidad</a>
                         </li>
                         <li>
-                            <a href="">Política de Cookies</a>
+                            <a href="#">Política de Cookies</a>
                         </li>
                         <li>
-                            <a href="">Aviso Legal</a>
+                            <a href="#">Aviso Legal</a>
                         </li>
                     </ul>
                 </div>

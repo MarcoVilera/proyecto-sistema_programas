@@ -1,0 +1,42 @@
+.dashboard-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    border: 2px solid #323232;
+    width: 100;
+    background-color: #7B74E0;
+    padding: 8px;
+}
+.dashboard-product a{
+    text-decoration: none;
+    color: #fff;
+
+}
+.dashboard-product p{
+    color: #fff;
+}
+.dashboard-product button{
+    background-color: transparent;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+.dashboard-product button:hover{
+    background-color: #5C49CE;
+
+}
+.dashboard-product button:active{
+    transform: scale(0.9);
+}
+.dashboard-product:first-child {
+    border-radius: 8px 8px 0 0;
+}
+
+.dashboard-product:last-child {
+    border-radius: 0 0 8px 8px;
+}

@@ -12,7 +12,7 @@ const TableRow = ({ shop, showAll, redirect }) => {
     if (!shop.verified && showAll) return (<></>)
     
     return (
-        <tr onClick={() => redirect(shop.rif)}>
+        <tr className="shop-row" onClick={() => redirect(shop.rif)}>
             <td> 
                 {(shop.verified) ? <MdOutlineVerified /> : <></>}
             </td>

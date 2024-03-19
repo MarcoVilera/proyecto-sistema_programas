@@ -18,8 +18,8 @@ export const Item = ({ name, price, rating, category, url, shopName, product_id}
                 <h3>{capitalize(name)}</h3>
                 <span className='item-shop_name'>{capitalize(shopName)}</span>
                 <p>{price}$</p>
+                <Rating initialValue={rating} size={30} allowFraction readonly />
                 <hr />
-                <Rating initialValue={rating} allowFraction readonly />
                 <div className="category-div">
                     <span className="item-category">{category}</span>
                 </div>

@@ -28,6 +28,7 @@ def get_products():
             municipality = db.session.query(Municipality).filter_by(id=shop.municipality_id).first()
             shops.append({
                 'shop_name': shop.name,
+                'rif': shop.rif,
                 'municipality_name': municipality.name,
                 'rating': shop.rating,
                 'price': item.price,

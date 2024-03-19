@@ -32,7 +32,8 @@ def get_products():
                 'rating': shop.rating,
                 'price': item.price,
                 'verified': shop.verified,
-                'stock': item.hasStock
+                'stock': item.hasStock,
+                'delivery': shop.hasDelivery
             })
             url = item.url
         product_info = {
@@ -72,7 +73,8 @@ def get_product(id):
             'rating': shop.rating,
             'price': item.price,
             'verified': shop.verified,
-            'stock': item.hasStock
+            'stock': item.hasStock,
+            'delivery': shop.hasDelivery
             
         })
     response = {

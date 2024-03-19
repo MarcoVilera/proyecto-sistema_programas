@@ -31,7 +31,7 @@ const Index = () => {
     // console.log('filtros', filter)
     const filteredItems = items.filter((item) => {
         return (
-            (filter.input === '' || item.product_name.includes(filter.input)) &&
+            (filter.input === '' || item.product_name.toLowerCase().includes(filter.input)) &&
             (filter.category === '' ||
                 item.category_name === filter.category) &&
             (filter.price === 0 || item.price <= filter.price) &&

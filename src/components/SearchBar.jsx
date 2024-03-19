@@ -12,7 +12,7 @@ export const SearchBar = ({ onSearch }) => {
                     placeholder="Search"
                     autoFocus
                     onChange={(event) =>
-                        onSearch({ input: event.target.value })
+                        onSearch({ input: event.target.value.toLowerCase() })
                     }
                 />
                 <button className="search-btn">

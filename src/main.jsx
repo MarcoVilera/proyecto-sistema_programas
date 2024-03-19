@@ -11,6 +11,7 @@ import ErrorPage from './pages/ErrorPage'
 import About from './pages/About'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import ShopPage from './pages/ShopPage'
 const router = createBrowserRouter([
     {
         path: '/',
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
                 element: <About />,
             },
         ],
+    },
+    {
+        path: '/Shop',
+        element: <ShopPage />
     },
     {
         path: '/App',

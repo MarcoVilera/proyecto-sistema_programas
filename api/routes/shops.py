@@ -15,7 +15,21 @@ def get_shops():
     if not shops: return jsonify({'message': 'No shops found'}), 404
 
     for shop in shops:
-        response_array.append(to_dict(shop))
+        municipality = db.session.query(Municipality).filter_by(id=shop.municipality_id).first()
+    
+        response_array.append({
+            'rif': shop.rif,
+            'name': shop.name,
+            'phone': shop.phone,
+            'municipality': municipality.name,
+            'address': shop.address,
+            'hasDelivery': shop.hasDelivery,
+            'website': shop.website,
+            'socialMedia': shop.socialMedia,
+            'rating': shop.rating,
+            'verified': shop.verified,
+        })
+        
 
     return jsonify(response_array), 200
 
@@ -25,8 +39,20 @@ def get_shop(rif):
     request_rif=rif.lower()
     shop = db.session.query(Shop).filter_by(rif=request_rif).first()
     if not shop: return jsonify({'message': 'Shop not found'}), 404
-
-    return jsonify(to_dict(shop)), 200
+    municipality = db.session.query(Municipality).filter_by(id=shop.municipality_id).first()
+    response = {
+        'rif': shop.rif,
+        'name': shop.name,
+        'phone': shop.phone,
+        'municipality': municipality.name,
+        'address': shop.address,
+        'hasDelivery': shop.hasDelivery,
+        'website': shop.website,
+        'socialMedia': shop.socialMedia,
+        'rating': shop.rating,
+        'verified': shop.verified,
+    }
+    return jsonify(response), 200
 
 # This endpoint is used to add a new shop to the database.
 @shops_bp.route('/', methods=['POST'])

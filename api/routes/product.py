@@ -68,6 +68,7 @@ def get_product(id):
         municipality = db.session.query(Municipality).filter_by(id=shop.municipality_id).first()
         shops.append({
             'name': shop.name,
+            'rif': shop.rif,
             'municipality': municipality.name,
             'rating': shop.rating,
             'price': item.price,

@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router"
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 import { MdOutlineRadioButtonChecked, MdOutlineRadioButtonUnchecked  } from "react-icons/md";
 
@@ -25,6 +25,8 @@ const ProductPage = () => {
         ProductServices.getData(id)
         .then(response => setData(response))
     }, [])
+
+    const link = `/Product/${id}`
     
 
     const handleToggle = () => {
@@ -58,13 +60,17 @@ const ProductPage = () => {
                         </button>
                         Solo Verificados
                     </div>
-                    <ProductTable shops={data.shops} showAll={showAll}/>
+
+                    {/* Product Table */}
+                    <ProductTable shops={data.shops} showAll={showAll} link={link}/>
+
                 </div>
                 <img className="ads"
                 src="https://via.assets.so/img.jpg?w=180&h=600&tc=#323232&bg=#cecece&t=AD"
                 alt=""
                 />
             </div>
+            <Outlet />
             <Link to={'/'}> Back </Link>
 
             <Footer />

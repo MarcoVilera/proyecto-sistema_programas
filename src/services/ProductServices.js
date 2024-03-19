@@ -13,13 +13,8 @@ const getCons = (id) =>
         return response.data.filter(cons => (cons.id_product == id && cons.hasStock))
     })
 
-const getShop = (con) =>
-    axios.get(`${url}/shops`)
-    .then(response => response.data.find(shop => shop.rif == con.shop_rif))
-
-const getMuns = () => 
-    axios.get(`${url}/municipalities`)
+const getShop = (rif) =>
+    axios.get(`${url}/shops/${rif}`)
     .then(response => response.data)
 
-
-export default { getData, getCons, getShop, getMuns }
+export default { getData, getCons, getShop }

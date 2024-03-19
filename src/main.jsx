@@ -25,8 +25,8 @@ const router = createBrowserRouter([
         ],
     },
     {
-        path: '/Shop',
-        element: <ShopPage />
+        path: '/shop/:rif',
+        element: <ShopPage />,
     },
     {
         path: '/App',
@@ -35,6 +35,12 @@ const router = createBrowserRouter([
     {
         path: '/Product/:productID',
         element: <ProductPage />,
+        children: [
+            {
+                path: '/Product/:productID/:rif',
+                
+            }
+        ]
     },
     {
         path: '/Login',

@@ -5,32 +5,34 @@ import { FaCheck } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
 
 import '../styles/ProductTable.css'
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const TableRow = ({ shop,  showAll }) => {
+const TableRow = ({ shop,  showAll, navigate}) => {
 
-    if (!shop.verified && showAll) return <></>
+    if (!shop.verified && showAll) return (<></>)
+
+    console.log(shop)
     
     return (
-        <tr>
-            {/* <NavLink to={'shopagelink.com'}> */}
-
-                <td> 
-                    {(shop.verified) ? <MdOutlineVerified /> : <></>}
-                </td>
-                <td> {shop.name} </td>
-                <td> {shop.municipality} </td>
-                <td> <Rating size={20} initialValue={shop.rating} allowFraction readonly /> </td>
-                <td> 
-                    {(shop.hasDelivery) ? <FaCheck /> : <ImCross />}
-                </td>
-                <td> {`${shop.price} $`} </td>
-            {/* </NavLink> */}
+        <tr onClick={() => navigate(shop.rif)}>
+            <td> 
+                {(shop.verified) ? <MdOutlineVerified /> : <></>}
+            </td>
+            <td> {shop.name} </td>
+            <td> {shop.municipality} </td>
+            <td> <Rating size={20} initialValue={shop.rating} allowFraction readonly /> </td>
+            <td> 
+                {(shop.hasDelivery) ? <FaCheck /> : <ImCross />}
+            </td>
+            <td> {`${shop.price} $`} </td>
         </tr>
     )
 }
 
-const ProductTable = ({ shops, showAll }) => {
+const ProductTable = ({ shops, showAll, link }) => {
+
+    const navigate = useNavigate()
+
     return(
         <table>
             <thead>
@@ -46,7 +48,7 @@ const ProductTable = ({ shops, showAll }) => {
             <tbody>
 
                 {shops.sort((a,b) => a.price - b.price).map((shop, i) => 
-                    <TableRow key={i} shop={shop} showAll={showAll}/>)}
+                    <TableRow key={i} shop={shop} showAll={showAll} navigate={(rif) => navigate(link + `/${rif}`)}/>)}
 
             </tbody>
         </table>

@@ -12,6 +12,8 @@ import About from './pages/About'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import ShopPage from './pages/ShopPage'
+import ShopInfo from './components/ShopInfo'
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -38,7 +40,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/Product/:productID/:rif',
-                
+                element: <ShopInfo />
             }
         ]
     },

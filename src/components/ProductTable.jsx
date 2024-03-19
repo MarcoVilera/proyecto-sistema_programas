@@ -7,14 +7,12 @@ import { ImCross } from "react-icons/im";
 import '../styles/ProductTable.css'
 import { useNavigate } from "react-router-dom";
 
-const TableRow = ({ shop,  showAll, navigate}) => {
+const TableRow = ({ shop, showAll, redirect }) => {
 
     if (!shop.verified && showAll) return (<></>)
-
-    console.log(shop)
     
     return (
-        <tr onClick={() => navigate(shop.rif)}>
+        <tr onClick={() => redirect(shop.rif)}>
             <td> 
                 {(shop.verified) ? <MdOutlineVerified /> : <></>}
             </td>
@@ -22,7 +20,7 @@ const TableRow = ({ shop,  showAll, navigate}) => {
             <td> {shop.municipality} </td>
             <td> <Rating size={20} initialValue={shop.rating} allowFraction readonly /> </td>
             <td> 
-                {(shop.hasDelivery) ? <FaCheck /> : <ImCross />}
+                {(shop.delivery) ? <FaCheck /> : <ImCross />}
             </td>
             <td> {`${shop.price} $`} </td>
         </tr>
@@ -48,7 +46,7 @@ const ProductTable = ({ shops, showAll, link }) => {
             <tbody>
 
                 {shops.sort((a,b) => a.price - b.price).map((shop, i) => 
-                    <TableRow key={i} shop={shop} showAll={showAll} navigate={(rif) => navigate(link + `/${rif}`)}/>)}
+                    <TableRow key={i} shop={shop} showAll={showAll} redirect={(rif) => navigate(link + `/${rif}`)}/>)}
 
             </tbody>
         </table>

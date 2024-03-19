@@ -70,7 +70,7 @@ const ProductPage = () => {
                 alt=""
                 />
             </div>
-            <Outlet />
+            <Outlet context={[ data.shops, link ]}/>
             <Link to={'/'}> Back </Link>
 
             <Footer />

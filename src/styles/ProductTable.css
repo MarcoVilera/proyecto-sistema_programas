@@ -12,6 +12,11 @@ table {
     size: 10px;
 }
 
+tr:hover {
+    transform:scale(105%);
+    transition: 0.5s;
+}
+
 th {
     width: 150px;
     height: 50px;

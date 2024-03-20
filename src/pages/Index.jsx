@@ -64,7 +64,7 @@ const Index = () => {
                     <div className="index-container">
                         <Sidebar
                             max={maxPrice}
-                            setMaxPrice={filter.price}
+                            // setMaxPrice={filter.price}
                             onFilter={(newFilter) =>
                                 setFilter((currentFilter) => ({
                                     ...currentFilter,

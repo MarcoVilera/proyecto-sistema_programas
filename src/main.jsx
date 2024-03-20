@@ -15,6 +15,7 @@ import ShopPage from './pages/ShopPage'
 import ShopInfo from './components/ShopInfo'
 
 import Dashboard from './pages/Dashboard'
+
 const router = createBrowserRouter([
     {
         path: '/',

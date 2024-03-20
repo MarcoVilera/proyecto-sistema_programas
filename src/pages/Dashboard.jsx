@@ -1,5 +1,4 @@
-
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Loading from '../components/Loading'
 import { NavBar } from '../components/NavBar'
@@ -12,7 +11,7 @@ export const Dashboard = () => {
     const [shopProducts, setShopProducts] = useState()
     const [formData, setFormData] = useState()
     const [modified, setModified] = useState(false)
-
+    const navigate = useNavigate()
     const rif = useParams().shopRif
     
     console.log(rif)
@@ -49,6 +48,7 @@ export const Dashboard = () => {
                 .then((response) => {
                     console.log(response)
                 })
+            setModified(false)
         }
     }
     return (

@@ -23,7 +23,8 @@
     padding: 20px;
     width: 500px;
     height: 500px;
-    background-color: #242424;
+    /* background-color: #242424; */
+    background-color: #fff;
     box-shadow: black 2px 2px 10px;
 
     display: flex;

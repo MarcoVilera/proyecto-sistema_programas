@@ -5,11 +5,11 @@ export const Footer = () => {
         <footer className="footer">
             <div className="wrap-footer">
                 <div className="text-element-footer element-footer">
-                    <h3>Restaurante</h3>
+                    <h3>Pricet@g</h3>
                     <p>
-                        Rincon Campesino Tradicion y recetas de familia que se
-                        crean como el primer Restaurante tipico de nuestra zona
-                        penquista.
+                        Aqui encontraras los mejores precios en las mejores tiendas de Valencia.
+                        Contamos con una gran variedad de productos y  ofertas exclusivas para que puedas encontrar lo que buscas.
+                        Todo a un solo click de distancia
                     </p>
                 </div>
                 <div className="text-element-footer element-footer">
@@ -17,7 +17,7 @@ export const Footer = () => {
                     <ul>
                         <li>Calle, Nonguen 1965</li>
                         <li>Tel: (+56) 041 2490012</li>
-                        <li>Correo: cl@rinconcampesino.cl</li>
+                        <li>Correo: adminprice@pricet@g.com</li>
                     </ul>
                 </div>
                 <div className="text-element-footer element-footer">

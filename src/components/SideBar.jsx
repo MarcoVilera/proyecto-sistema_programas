@@ -36,8 +36,11 @@ export const Sidebar = ({ max = 100, onFilter }) => {
                                 type="radio"
                                 name="categories"
                                 value={category.name}
-                                onClick={(event) =>
+                                onClick={(event) =>{
+
+                                    console.log(event.target.value, 'categoryyyyyyyyyyyyyyyyyyyyyyyyyyyyyy');
                                     onFilter({ category: event.target.value })
+                                }
                                 }
                             />
                             {category.name}

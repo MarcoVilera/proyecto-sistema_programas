@@ -8,7 +8,7 @@
 }
 
 .product-container img {
-    width: 50%;
+    width: auto;
     height: 50%;
     border-radius: 25px;
 }
@@ -17,16 +17,25 @@
     margin: 6px;
 }
 
+.link {
+    position: relative;
+    top: 10%;
+    font-size: 20px;
+    text-decoration: none;
+    color: #7B74E0;
+}
+
 .description {
     padding: 10px;
-    border: 2px white solid;
+    border: 2px black solid;
     border-radius: 10px;
     margin-bottom: 20px;
 }
 
 .filtros {
     display: flex;
-    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
 }
 
 .ads {
@@ -40,7 +49,7 @@
     align-items: center;
     padding: 19px 37px;
 
-    border: 3px white solid ;
+    border: 3px black solid ;
     border-radius: 10px;
 }
 

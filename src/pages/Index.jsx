@@ -1,12 +1,15 @@
+
+import axios from 'axios'
 import { ItemContainer } from '../components/ItemContainer'
 import { NavBar } from '../components/NavBar'
 import { SearchBar } from '../components/SearchBar'
 import { Sidebar } from '../components/SideBar'
-import '../styles/index.css'
-import axios from 'axios'
+
 import { useEffect, useState } from 'react'
 import { Footer } from '../components/Footer'
 import Loading from '../components/Loading'
+
+import '../styles/index.css'
 
 const Index = () => {
     const [items, setItems] = useState([])
@@ -28,8 +31,6 @@ const Index = () => {
             })
     }, [])
 
-    // console.log(items)
-
     // console.log('filtros', filter)
     const removedItems = items.filter((item) => { return item.lowest_price > 0 })
 
@@ -38,13 +39,16 @@ const Index = () => {
             (filter.input === '' || item.name.toLowerCase().includes(filter.input)) &&
             (filter.category === '' ||
                 item.category === filter.category) &&
-            (filter.price === 0 || item.price <= filter.price) &&
+            (filter.price === 0 || item.lowest_price <= filter.price) &&
             (filter.rating === 0 || item.rating >= filter.rating)
         )
     })
-    const maxPrice = Math.max(items.map((item) => item.lowest_price))
-    console.log(maxPrice, 'maxprice')
-    console.log(filter.price)
+
+    const maxPrice = Math.max(...items.map(item => item.lowest_price))
+
+    console.log(filter, 'filtros')
+
+    // console.log(filter.price)
     // console.log('items', removedItems)
     // console.log('maxPrice', maxPrice)
     // console.log('items filtrados', filteredItems)
@@ -89,8 +93,8 @@ const Index = () => {
                     </div>
                 </>
             )}
-
             <Footer />
+
         </>
     )
 }

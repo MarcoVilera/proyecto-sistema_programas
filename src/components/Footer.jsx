@@ -5,7 +5,7 @@ export const Footer = () => {
         <footer className="footer">
             <div className="wrap-footer">
                 <div className="text-element-footer element-footer">
-                    <h3>Pricet@g</h3>
+                    <h1>Pricet@g</h1>
                     <p>
                         Aqui encontraras los mejores precios en las mejores tiendas de Valencia.
                         Contamos con una gran variedad de productos y  ofertas exclusivas para que puedas encontrar lo que buscas.
@@ -28,12 +28,6 @@ export const Footer = () => {
                         </li>
                         <li>
                             <a href="#">Nosotros</a>
-                        </li>
-                        <li>
-                            <a href="#">Carta</a>
-                        </li>
-                        <li>
-                            <a href='#'>Blog</a>
                         </li>
                         <li>
                             <a href="#">Contacto</a>

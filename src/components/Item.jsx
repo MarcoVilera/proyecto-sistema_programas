@@ -17,7 +17,7 @@ export const Item = ({ name, price, rating, category, url, id}) => {
                 <img src={url} alt={name} />
                 <h3>{capitalize(name)}</h3>
                 <p>{price}$</p>
-                <Rating initialValue={rating} size={30} allowFraction readonly />
+                {(rating == undefined) ? <></> : <Rating initialValue={rating} size={30} allowFraction readonly />}
                 <hr />
                 <div className="category-div">
                     <span className="item-category">{category}</span>

@@ -14,7 +14,7 @@ export const NavBar = () => {
             <header>
                 <div className="header-title">
                     <div className="title">
-                        <FaCartPlus size={'5em'} />
+                        <FaCartPlus size={'5em'} className='logo' />
                         <h1>pricet@g</h1>
                     </div>
                     {loged ? (

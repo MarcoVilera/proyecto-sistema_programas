@@ -1,7 +1,8 @@
 
 footer {
     background-color: #7B74E0;
-    color: var(--black-c);
+    color: #E4E7FB;
+    font-weight: 1000;
 }
 
 footer ul {

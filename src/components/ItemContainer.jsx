@@ -12,6 +12,8 @@ export const ItemContainer = ({ items }) => {
     }
     */
 
+    console.log(items)
+
     const remap = items.map(item => (item.lowest_price == undefined) ? 
         {
             ...item,
@@ -23,7 +25,7 @@ export const ItemContainer = ({ items }) => {
         } : item
     )
 
-    console.log(remap, 'remap')
+    // console.log(remap, 'remap')
 
     return (
         <div className="item-container">

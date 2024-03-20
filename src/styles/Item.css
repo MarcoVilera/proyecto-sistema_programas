@@ -22,7 +22,7 @@
     margin-bottom: 0px;
     font-size: 25px;
     font-weight: 500;
-    color: #F8FAFC;
+    color: #7B74E0;
 
 }
 
@@ -34,9 +34,11 @@
 }
 
 .item-link {
+    font-size: 20px;
+    /* font-weight: bold; */
     text-align: center;
     text-decoration: none;
-    color: #F8FAFC;
+    color: #7B74E0;
 }
 
 .item-link .item {

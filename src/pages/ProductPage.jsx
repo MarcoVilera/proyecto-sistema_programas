@@ -10,6 +10,7 @@ import { Footer } from "../components/Footer";
 import { NavBar } from "../components/NavBar";
 import ProductTable from '../components/ProductTable'
 import ProductServices from '../services/ProductServices'
+import { IoIosArrowBack } from "react-icons/io";
 
 import '../styles/ProductPage.css'
 import Loading from "../components/Loading";
@@ -66,6 +67,9 @@ const ProductPage = () => {
 
                     {/* Product Table */}
                     <ProductTable shops={data.shops} showAll={showAll} link={link}/>
+                    <div className="centered">
+                        <Link to={'/'} className="link"> <IoIosArrowBack /> Back </Link>
+                    </div>
 
                 </div>
                 <img className="ads"
@@ -74,7 +78,6 @@ const ProductPage = () => {
                 />
             </div>
             <Outlet context={[ data.shops, link ]}/>
-            <Link to={'/'}> Back </Link>
 
             <Footer />
         </>

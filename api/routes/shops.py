@@ -130,10 +130,10 @@ def modify_shop(rif):
     }
     '''
     request_rif = rif.lower()
-    request_name = request.json['name'].lower()
+    request_name = request.json['name'].capitalize()
     request_phone = request.json['phone']
     # request_municipality = request.json['municipality_name'].lower()
-    request_address = request.json['address'].lower()
+    request_address = request.json['address'].capitalize()
     request_hasDelivery = request.json['hasDelivery']
     request_website = request.json['website'].lower()
     request_socialMedia = request.json['socialMedia'].lower()

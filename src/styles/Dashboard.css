@@ -1,0 +1,49 @@
+.dashboard-container input {
+    width: 400px;
+    border: 2px solid #909090;
+    border-radius: 6px;
+    font-size: 1.2em;
+}
+.dashboard-container label{
+    display: block;
+}
+.dashboard-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-container select{
+    font-size: 1.2em;
+    border-radius: 6px;
+    border: 2px solid #909090;
+}
+.dashboard-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-form button{
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 6px;
+    border: 2px solid #7B74E0;
+    background-color: #7B74E0;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: white;
+}
+.dashboard-form button:hover{
+    background-color: #5C49CE;
+    border: 2px solid #5C49CE;
+}
+.dashboard-form button:active{
+    background-color: #5C49B9;
+    border: 2px solid #5C49B9;
+    transform: scale(0.95);
+}

@@ -132,30 +132,30 @@ def modify_shop(rif):
     request_rif = rif.lower()
     request_name = request.json['name'].lower()
     request_phone = request.json['phone']
-    request_municipality = request.json['municipality_name'].lower()
+    # request_municipality = request.json['municipality_name'].lower()
     request_address = request.json['address'].lower()
     request_hasDelivery = request.json['hasDelivery']
     request_website = request.json['website'].lower()
     request_socialMedia = request.json['socialMedia'].lower()
-    request_rating = float(request.json['rating'])
-    request_verified = request.json['verified']
+    # request_rating = float(request.json['rating'])
+    # request_verified = request.json['verified']
     
     shop = db.session.query(Shop).filter_by(rif=request_rif).first()
     if not shop: return jsonify({'message': 'Shop not found'}), 404
 
 
-    shop_municipality = db.session.query(Municipality).filter_by(name=request_municipality).first()
-    if not shop_municipality: return jsonify({'message': 'Municipality not found'}), 401
+    # shop_municipality = db.session.query(Municipality).filter_by(name=request_municipality).first()
+    # if not shop_municipality: return jsonify({'message': 'Municipality not found'}), 401
     
     shop.name = request_name
     shop.phone = request_phone
-    shop.municipality_id = shop_municipality.id
+    # shop.municipality_id = shop_municipality.id
     shop.address = request_address
     shop.hasDelivery = request_hasDelivery
     shop.website = request_website
     shop.socialMedia = request_socialMedia
-    shop.rating = request_rating
-    shop.verified = request_verified
+    # shop.rating = request_rating
+    # shop.verified = request_verified
     db.session.commit()
 
     return jsonify({'message': 'Shop modified successfully'}), 200

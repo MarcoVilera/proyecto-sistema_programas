@@ -46,7 +46,28 @@ def get_consolidates_items():
         })
 
     return jsonify(response_array), 200
-    
+
+# This endpoint is used to get all consolidates from a shop.
+@consolidate_bp.route('/<string:shop_rif>', methods=['GET'])
+def get_consolidates_by_shop(shop_rif):
+    request_shop_rif = shop_rif
+    consolidates = db.session.query(Consolidate).filter_by(shop_rif=request_shop_rif).all()
+    response_array = []
+    if not consolidates: return jsonify({'message': 'No consolidates found'}), 404
+    for consolidate in consolidates:
+        product = db.session.query(Product).filter_by(id=consolidate.id_product).first()
+        category = db.session.query(Category).filter_by(id=product.category_id).first()
+        response_array.append({
+            'id': consolidate.id,
+            'shop_rif': consolidate.shop_rif.capitalize(),
+            'id_product': consolidate.id_product,
+            'price': consolidate.price,
+            'hasStock': consolidate.hasStock,
+            'url': consolidate.url,
+            'product_name': product.name,
+            'category_name': category.name.capitalize()
+        })
+    return response_array, 200
 # This endpoint is used to get all the consolidates from a specific shop.
 @consolidate_bp.route('/', methods=['POST'])
 def new_consolidate():

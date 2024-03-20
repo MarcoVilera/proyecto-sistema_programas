@@ -21,7 +21,7 @@ def valid_user():
     user = db.session.query(User).filter_by(username=request_username, password=request_password).first()
 
     if user:
-        return jsonify({'valid':True, 'user':user.username}), 200
+        return jsonify({'valid':True, 'user':user.username, 'rif':user.rif}), 200
     return jsonify({'valid':False, 'user':None}), 401
 
 

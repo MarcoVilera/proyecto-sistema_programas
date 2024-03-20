@@ -1,39 +1,13 @@
 import '../styles/NavBar.css'
-import { Route, Routes, NavLink, Link } from 'react-router-dom'
+import { Route, Routes, NavLink, Link, useNavigate} from 'react-router-dom'
 import { FaCartPlus } from 'react-icons/fa'
-// import { useEffect, useState } from 'react'
-import { About } from '../pages/About'
 
-// const testcategorys = [
-//     {
-//         id: 1,
-//         name: 'Componentes',
-//     },
-//     {
-//         id: 2,
-//         name: 'Telefonos',
-//     },
-//     {
-//         id: 3,
-//         name: 'Pc',
-//     },
-//     {
-//         id: 4,
-//         name: 'Laptops',
-//     },
-//     {
-//         id: 5,
-//         name: 'Tiendas',
-//     },
-//     {
-//         id: 6,
-//         name: 'Trending',
-//     },
-// ]
+import { About } from '../pages/About'
 
 export const NavBar = () => {
 
     const loged = localStorage.getItem('username')
+    const navigate = useNavigate()
     console.log(loged)
     return (
         <>
@@ -44,13 +18,22 @@ export const NavBar = () => {
                         <h1>pricet@g</h1>
                     </div>
                     {loged ? (
+
                         <div className="header-user">
                             <p>Bienvenido de vuelta, {loged}!</p>
+                            <button className='login-btn'
+                                onClick={() => {
+                                    navigate ( `/Dashboard/${localStorage.getItem('rif')}`)
+                                }}
+                            >
+                                DashBoard
+                            </button>
                             <button
                                 className="register-btn"
                                 onClick={() => {
                                     localStorage.removeItem('username')
-                                    window.location.reload()
+                                    localStorage.removeItem('rif')
+                                    navigate('/')
                                 }}>
                                 Log out
                             </button>

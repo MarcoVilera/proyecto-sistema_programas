@@ -1,3 +1,4 @@
+
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import Loading from '../components/Loading'
@@ -6,11 +7,14 @@ import { useEffect, useState } from 'react'
 import { ProductsContainer } from '../components/ProductsContainer'
 import '../styles/Dashboard.css'
 import { Footer } from '../components/Footer'
+
 export const Dashboard = () => {
     const [shopProducts, setShopProducts] = useState()
     const [formData, setFormData] = useState()
     const [modified, setModified] = useState(false)
+
     const rif = useParams().shopRif
+    
     console.log(rif)
     useEffect(() => {
         axios.get(`http://localhost:5000/shops/${rif}`).then((response) => {

@@ -12,19 +12,31 @@ export const ItemContainer = ({ items }) => {
     }
     */
 
+    const remap = items.map(item => (item.name == undefined) ? 
+        {
+            ...item,
+            id: item.id_product,
+            name: item.product_name,
+            category: item.category_name,
+
+        } : item
+    )
+
+    console.log(remap, 'remap')
+
     return (
         <div className="item-container">
-            {items.map((item) => (
+            {remap.map((item) => (
                 <Item
                     key={item.id}
-                    name={item.product_name}
+                    name={item.name}
                     price={item.price}
-                    rating={item.rating}
-                    category={item.category_name}
+                    // rating={item.rating}
+                    category={item.category}
                     url={item.url}
                     id={item.id}
-                    shopName={item.shopName}
-                    product_id = {item.id_product}
+                    // shopName={item.shopName}
+                    product_id = {item.id}
                 />
             ))}
         </div>

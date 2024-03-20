@@ -1,5 +1,5 @@
 
-import { Link, useNavigate, useOutletContext, useParams } from "react-router-dom"
+import { Link, redirect, useNavigate, useOutletContext, useParams } from "react-router-dom"
 
 import '../styles/ShopInfo.css'
 import { Rating } from "react-simple-star-rating";
@@ -7,6 +7,7 @@ import { Rating } from "react-simple-star-rating";
 import { MdOutlineVerified } from "react-icons/md";
 
 const ShopInfo = () => {
+    const loged = localStorage.getItem('rif')
 
     const [ shops, link ] = useOutletContext();
 
@@ -15,7 +16,7 @@ const ShopInfo = () => {
 
     const shop = shops.find(shp => shp.rif == rif)
 
-    console.log(shop)
+    const redirect = (loged == shop.rif) ? `/Dashboard/${rif}` : `/shop/${rif}`
 
     return (
         <div className="info-bg" 
@@ -27,7 +28,7 @@ const ShopInfo = () => {
                 {(shop.verified) ? <MdOutlineVerified size={30}/> : <></>}
                 <h3>Del Municipio {shop.municipality}</h3>
                 <Rating initialValue={shop.rating} allowFraction readonly/>
-                <Link to={`/shop/${rif}`} className="redirect">
+                <Link to={redirect} className="redirect">
                     Ver mas informacion ...
                 </Link>
             </div>

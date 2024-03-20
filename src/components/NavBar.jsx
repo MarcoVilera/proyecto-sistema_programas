@@ -1,5 +1,5 @@
 import '../styles/NavBar.css'
-import { Route, Routes, NavLink, Link, useNavigate} from 'react-router-dom'
+import { Route, Routes, NavLink, Link, useNavigate } from 'react-router-dom'
 import { FaCartPlus } from 'react-icons/fa'
 
 import { About } from '../pages/About'

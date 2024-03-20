@@ -33,6 +33,8 @@ const ProductPage = () => {
         setShowAll(!showAll)
     }
 
+    console.log(data)
+
     return (data.length == 0 ) ?
     (<> <NavBar /> <Loading /> </>)  : (
         <>
@@ -40,8 +42,9 @@ const ProductPage = () => {
             <div className="wrapper">
                 <div>
                     <div className="description">
-                        <h3>{data.name}</h3>
-                        <p>{data.manufacturer}</p>
+                        <h2>{data.name}</h2>
+                        <h3>{data.manufacturer}</h3>
+                        <p>{data.category}</p>
                         <Rating size={20} initialValue={3} allowFraction readonly />
                     </div>
                     <img className="ads"

@@ -17,7 +17,7 @@ export const Footer = () => {
                     <ul>
                         <li>Calle, Nonguen 1965</li>
                         <li>Tel: (+56) 041 2490012</li>
-                        <li>Correo: cl@rinconcampesino.cl</li>
+                        <li>Correo: adminprice@pricet@g.com</li>
                     </ul>
                 </div>
                 <div className="text-element-footer element-footer">

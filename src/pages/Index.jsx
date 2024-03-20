@@ -28,7 +28,7 @@ const Index = () => {
             })
     }, [])
 
-    console.log(items)
+    // console.log(items)
 
     // console.log('filtros', filter)
     const removedItems = items.filter((item) => { return item.lowest_price > 0 })
@@ -38,13 +38,14 @@ const Index = () => {
             (filter.input === '' || item.name.toLowerCase().includes(filter.input)) &&
             (filter.category === '' ||
                 item.category === filter.category) &&
-            (filter.price === 0 || item.price <= filter.price) 
-            // (filter.rating === 0 || item.rating >= filter.rating)
+            (filter.price === 0 || item.price <= filter.price) &&
+            (filter.rating === 0 || item.rating >= filter.rating)
         )
     })
-    const maxPrice = Math.max(...items.map((item) => item.price))
+    const maxPrice = Math.max(items.map((item) => item.lowest_price))
+    console.log(maxPrice, 'maxprice')
     console.log(filter.price)
-    console.log('items', removedItems)
+    // console.log('items', removedItems)
     // console.log('maxPrice', maxPrice)
     // console.log('items filtrados', filteredItems)
     return (

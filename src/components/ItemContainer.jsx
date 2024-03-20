@@ -12,12 +12,13 @@ export const ItemContainer = ({ items }) => {
     }
     */
 
-    const remap = items.map(item => (item.name == undefined) ? 
+    const remap = items.map(item => (item.lowest_price == undefined) ? 
         {
             ...item,
             id: item.id_product,
             name: item.product_name,
             category: item.category_name,
+            lowest_price: item.price
 
         } : item
     )
@@ -35,8 +36,7 @@ export const ItemContainer = ({ items }) => {
                     category={item.category}
                     url={item.url}
                     id={item.id}
-                    shopName={item.shopName}
-                    product_id = {item.id_product}
+                    product_id = {item.id}
                 />
             ))}
         </div>

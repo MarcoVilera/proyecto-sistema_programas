@@ -21,7 +21,8 @@ def get_products():
         manufacturer = db.session.query(Manufacturer).filter_by(id=product.manufacturer_id).first()
         category = db.session.query(Category).filter_by(id=product.category_id).first()
         consolidated = db.session.query(Consolidate).filter_by(id_product=product.id).all()
-    
+
+
         shops = []
         for item in consolidated:
             shop = db.session.query(Shop).filter_by(rif=item.shop_rif).first()
@@ -37,12 +38,16 @@ def get_products():
                 'delivery': shop.hasDelivery
             })
             url = item.url
+        lowest_price = consolidated[0].price if consolidated else 0
+
         product_info = {
             'id': product.id,
             'name': product.name,
             'manufacturer': manufacturer.name,
             'category': category.name,
             'shops': shops,
+            'lowest_price': lowest_price,
+            'rating': product.rating,
             'url': url
         }
         response.append(product_info)
@@ -79,13 +84,19 @@ def get_product(id):
             'delivery': shop.hasDelivery
             
         })
+    lowest_price = 0
+    for item in consolidated:
+        lowest_price = consolidated[0].price if consolidated else 0
+        
     response = {
         'id': product.id,
         'name': product.name,
         'manufacturer': manufacturer.name,
         'category': category.name,
         'url': url,
-        'shops': shops
+        'shops': shops,
+        'lowest_price': lowest_price,
+        'rating': product.rating
 
     }
     

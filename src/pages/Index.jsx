@@ -19,7 +19,7 @@ const Index = () => {
 
     useEffect(() => {
         axios
-            .get('http://127.0.0.1:5000/consolidated/get')
+            .get('http://127.0.0.1:5000/products/')
             .then((response) => {
                 setItems(response.data)
             })
@@ -29,7 +29,9 @@ const Index = () => {
     }, [])
 
     // console.log('filtros', filter)
-    const filteredItems = items.filter((item) => {
+    const removedItems = items.filter((item) => { return item.lowest_price > 0 })
+
+    const filteredItems = removedItems.filter((item) => {
         return (
             (filter.input === '' || item.product_name.toLowerCase().includes(filter.input)) &&
             (filter.category === '' ||
@@ -38,8 +40,9 @@ const Index = () => {
             (filter.rating === 0 || item.rating >= filter.rating)
         )
     })
-    const maxPrice = Math.max(...items.map((item) => item.price))
+    const maxPrice = Math.max(...items.map((item) => item.lowest_price))
     console.log(filter.price)
+    console.log('items', removedItems)
     // console.log('maxPrice', maxPrice)
     // console.log('items filtrados', filteredItems)
     return (

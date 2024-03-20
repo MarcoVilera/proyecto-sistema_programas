@@ -1,4 +1,3 @@
-
 import axios from 'axios'
 import { ItemContainer } from '../components/ItemContainer'
 import { NavBar } from '../components/NavBar'
@@ -31,20 +30,29 @@ const Index = () => {
             })
     }, [])
 
+    const handleFilter = (newFilter) => {
+        setFilter((prevFilters) => ({
+            ...prevFilters,
+            ...newFilter,
+        }))
+    }
+
     // console.log('filtros', filter)
-    const removedItems = items.filter((item) => { return item.lowest_price > 0 })
+    const removedItems = items.filter((item) => {
+        return item.lowest_price > 0
+    })
 
     const filteredItems = removedItems.filter((item) => {
         return (
-            (filter.input === '' || item.name.toLowerCase().includes(filter.input)) &&
-            (filter.category === '' ||
-                item.category === filter.category) &&
+            (filter.input === '' ||
+                item.name.toLowerCase().includes(filter.input)) &&
+            (filter.category === '' || item.category === filter.category) &&
             (filter.price === 0 || item.lowest_price <= filter.price) &&
             (filter.rating === 0 || item.rating >= filter.rating)
         )
     })
 
-    const maxPrice = Math.max(...items.map(item => item.lowest_price))
+    const maxPrice = Math.max(...items.map((item) => item.lowest_price))
 
     console.log(filter, 'filtros')
 
@@ -80,7 +88,7 @@ const Index = () => {
                                     ...currentFilter,
                                     ...newFilter,
                                     input: currentFilter.input,
-                                    category: currentFilter.category,
+                                    // category: currentFilter.category,
                                     // rating: currentFilter.rating,
                                 }))
                             }
@@ -94,7 +102,6 @@ const Index = () => {
                 </>
             )}
             <Footer />
-
         </>
     )
 }

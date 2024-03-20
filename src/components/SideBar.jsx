@@ -24,6 +24,13 @@ export const Sidebar = ({ max = 100, onFilter }) => {
         })
     }, [])
 
+    const [selectedCategory, setSelectedCategory] = useState(null)
+
+    const handleCategoryChange = (event) => {
+        setSelectedCategory(event.target.value)
+        onFilter({ category: event.target.value })
+    }
+
     return (
         <div className="sidebar-container">
             <h2>Filtros</h2>
@@ -36,12 +43,14 @@ export const Sidebar = ({ max = 100, onFilter }) => {
                                 type="radio"
                                 name="categories"
                                 value={category.name}
-                                onClick={(event) =>{
+                                // onClick={(event) =>{
 
-                                    console.log(event.target.value, 'categoryyyyyyyyyyyyyyyyyyyyyyyyyyyyyy');
-                                    onFilter({ category: event.target.value })
-                                }
-                                }
+                                //     console.log(event.target.value, 'categoryyyyyyyyyyyyyyyyyyyyyyyyyyyyyy');
+                                //     onFilter({ category: event.target.value })
+                                // }
+                                // }
+                                checked={selectedCategory === category.name}
+                                onChange={handleCategoryChange}
                             />
                             {category.name}
                         </label>

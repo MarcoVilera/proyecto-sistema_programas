@@ -99,9 +99,9 @@ const Index = () => {
                                 alt=""
                             /> */}
                     </div>
+                    <Footer />
                 </>
             )}
-            <Footer />
         </>
     )
 }

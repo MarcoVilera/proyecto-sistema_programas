@@ -67,6 +67,7 @@ const ProductPage = () => {
 
                     {/* Product Table */}
                     <ProductTable shops={data.shops} showAll={showAll} link={link}/>
+                    <br />
                     <div className="centered">
                         <Link to={'/'} className="link"> <IoIosArrowBack /> Back </Link>
                     </div>

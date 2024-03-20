@@ -9,7 +9,8 @@
 
 .product-container img {
     width: auto;
-    height: 50%;
+    max-width: 600px;
+    height: 500px;
     border-radius: 25px;
 }
 
@@ -30,6 +31,8 @@
     border: 2px black solid;
     border-radius: 10px;
     margin-bottom: 20px;
+
+    max-width: 160px;
 }
 
 .filtros {

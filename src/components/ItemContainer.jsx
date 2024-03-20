@@ -30,13 +30,13 @@ export const ItemContainer = ({ items }) => {
                 <Item
                     key={item.id}
                     name={item.name}
-                    price={item.price}
-                    // rating={item.rating}
+                    price={item.lowest_price}
+                    rating={item.rating}
                     category={item.category}
                     url={item.url}
                     id={item.id}
-                    // shopName={item.shopName}
-                    product_id = {item.id}
+                    shopName={item.shopName}
+                    product_id = {item.id_product}
                 />
             ))}
         </div>
